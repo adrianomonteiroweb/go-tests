@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 type test struct {
 	data []int
@@ -15,7 +18,7 @@ func TestTableSum(t *testing.T) {
 	}
 
 	for _, v := range tests {
-		sumTest := sum(v.data...)
+		sumTest := Sum(v.data...)
 
 		if sumTest != v.answer {
 			t.Error("Expected: ", v.answer, "Got: ", sumTest)
@@ -24,7 +27,7 @@ func TestTableSum(t *testing.T) {
 }
 
 func TestSum(t *testing.T) {
-	testing := sum(3, 2, 1)
+	testing := Sum(3, 2, 1)
 
 	result := 6
 
@@ -66,3 +69,8 @@ func TestMultiply(t *testing.T) {
 // 		t.Error("Expected: ", result, "Got: ", testing)
 // 	}
 // }
+
+func ExampleSoma() {
+	fmt.Println(Sum(4, 2, 1))
+	// Output: 7
+}
